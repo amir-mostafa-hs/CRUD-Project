@@ -1,18 +1,11 @@
 const express = require("express");
-require("dotenv").config();
-const runJsonServer = require("./data/runJsonServer");
-const crud = require("./routes/crud");
-
 const app = express();
-runJsonServer();
 
 app.get("/", (req, res) => {
-  res.send("hello friends");
+  res.send("hello world!");
 });
-
-app.use("/data", crud);
 
 const PORT = 5000;
 app.listen(PORT, () => {
-  console.log("server run in port:", PORT);
+  console.log("Server is runs on port:", PORT);
 });

@@ -1,9 +1,11 @@
 const express = require("express");
-require("dotenv").config();
+// import json server starter function
 const runJsonServer = require("./data/runJsonServer");
+// import route file
 const crud = require("./routes/crud");
 
 const app = express();
+// run json server
 runJsonServer();
 
 app.use(express.json());
@@ -13,6 +15,7 @@ app.get("/", (req, res) => {
   res.send("hello friends");
 });
 
+// add route
 app.use("/data", crud);
 
 const PORT = 5000;

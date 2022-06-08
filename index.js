@@ -6,6 +6,9 @@ const crud = require("./routes/crud");
 const app = express();
 runJsonServer();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get("/", (req, res) => {
   res.send("hello friends");
 });
